@@ -17,6 +17,8 @@ body{
     background: -moz-linear-gradient(#92c6fc, #fff); /* Firefox 3.6 - 15 */
     background: linear-gradient(#92c6fc, #fff); /* 标准的语法 */
     min-width: 560px;
+    height: 1000px;
+    overflow: hidden;
 }
 
 
