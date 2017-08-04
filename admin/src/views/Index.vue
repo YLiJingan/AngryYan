@@ -17,7 +17,7 @@
               <li>
                 <a data-toggle="collapse"  class="collapsed" aria-expanded="false" href="#collapseOne" @click="toggle">
                   <i class="icon-home icon-large"></i>
-                  <span style='display:inline-block'><router-link to='/'>Home</router-link></span>
+                  <span style='display:inline-block'><router-link to='/home1'>Home</router-link></span>
                   <span class="icon " v-bind:class="{'icon-chevron-right': isA, 'icon-chevron-down':!isA}"></span>
                 </a>
                 <ul class="sub collapse" id="collapseOne" aria-expanded="false">
@@ -28,7 +28,7 @@
               <li>
                 <a data-toggle="collapse"  class="collapsed" aria-expanded="false" href="#collapseTwo">
                   <i class=" icon-calendar"></i>
-                  <span style='display:inline-block'><router-link to='/'>Home</router-link></span>
+                  <span style='display:inline-block'><router-link to='/home2'>Home</router-link></span>
                   <span class="icon " v-bind:class="{'icon-chevron-right': isA, 'icon-chevron-down':!isA}"></span>
                 </a>
                 <ul class="sub collapse" id="collapseTwo" aria-expanded="false">
@@ -39,7 +39,7 @@
               <li>
                 <a data-toggle="collapse"  class="collapsed" aria-expanded="false" href="#collapseThree">
                   <i class=" icon-tasks"></i>
-                  <span style='display:inline-block'><router-link to='/'>Home</router-link></span>
+                  <span style='display:inline-block'><router-link to='/home3'>Home</router-link></span>
                   <span class="icon " v-bind:class="{'icon-chevron-right': isA, 'icon-chevron-down':!isA}"></span>
                 </a>
                 <ul class="sub collapse" id="collapseThree" aria-expanded="false">
@@ -50,7 +50,7 @@
               <li>
                 <a data-toggle="collapse"  class="collapsed" aria-expanded="false" href="#collapseFour">
                   <i class=" icon-cogs"></i>
-                  <span style='display:inline-block'><router-link to='/'>Home</router-link></span>
+                  <span style='display:inline-block'><router-link to='/home4'>Home</router-link></span>
                   <span class="icon " v-bind:class="{'icon-chevron-right': isA, 'icon-chevron-down':!isA}"></span>
                 </a>
                 <ul class="sub collapse" id="collapseFour" aria-expanded="false">

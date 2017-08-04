@@ -13,7 +13,7 @@ Vue.use(Router)
 export default new Router({
   routes: [
     {
-      path: '/signin',
+      path: '/',
       name: 'Signin',
       component:Signin
     },
@@ -22,23 +22,32 @@ export default new Router({
       name: 'Signup',
       component:Signup
     },{
-      path: '/',
+      path: '/home1',
       component: Index,
-      name: '导航一',
       children: [
-        { path: '/', component: Main, name: 'Main'},
+        { path: '/', component: Main, name: '导航一'},
         { path: '/table', component: Table, name: 'Table' },
         { path: '/chart', component: Chart, name: 'Chart' },
       ]
     },
     {
-      path: '/form',
+      path: '/home2',
       component: Index,
-      name: '导航二',
       children: [
-        { path: '/', component: Form, name: 'Form'},
+        { path:'/', component: Main, name:'导航二'},
+        { path: '/form', component: Form, name: 'Form'},
         { path:'/tabs',component:Tabs,name:'Tabs'}
       ]
+    },
+    {
+      path: '/home3',
+      component: Index,
+      name: '导航三'
+    },
+    {
+      path: '/home4',
+      component: Index,
+      name: '导航四'
     },
   ]
 })
