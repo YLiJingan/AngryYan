@@ -1,5 +1,5 @@
 <template>
-    <el-form ref="form" :model="form" label-width="100px" style="border-radius:5px;z-index:11;background-color: #fff; margin:15px 40px 0px 40px;padding: 20px;">
+    <el-form ref="form" :model="form" label-width="100px" style="border-radius:5px;z-index:11;background-color: #fff; margin:15px 40px 30px 40px;padding: 20px;">
         <el-form-item label="活动名称">
             <el-input v-model="form.name"></el-input>
         </el-form-item>
