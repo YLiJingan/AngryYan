@@ -7,8 +7,12 @@ import $ from 'jquery'
 import 'assets/css/bootstrap.css'
 import 'assets/js/bootstrap.js'
 import echarts from 'echarts'
+import element from 'element-ui'
+import 'element-ui/lib/theme-default/index.css'
+
 
 Vue.config.productionTip = false
+Vue.use(element);
 
 /* eslint-disable no-new */
 new Vue({

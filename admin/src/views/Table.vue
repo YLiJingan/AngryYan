@@ -1,11 +1,11 @@
 <template>
   <div>
     <div class="toolbar">
-      <form class="form-inline">
+      <form class="form-inline" style='display:inline-block'>
         <input type="text" class="form-control" placeholder="姓名">
-        <button class="btn btn-success" >查询</button>
-        <button class="btn btn-primary" data-toggle="modal" data-target="#addModal">新增</button>
       </form>
+      <button class="btn btn-success" >查询</button>
+        <button class="btn btn-primary" data-toggle="modal" data-target="#addModal">新增</button>
     </div>
     <div class="tablebar">
       <table class="table table-hover" :data="users">
@@ -21,13 +21,13 @@
         </tr>
         </thead>
         <tbody>
-        <tr>
+        <tr v-for='item in info'>
           <td><input type="checkbox"></td>
-          <td>111</td>
-          <td>颜丽菁</td>
-          <td>女</td>
-          <td>199.06.26</td>
-          <td>sadxssffd</td>
+          <td>{{item.id}}</td>
+          <td>{{item.name}}</td>
+          <td>{{item.sex}}</td>
+          <td>{{item.bir}}</td>
+          <td>{{item.address}}</td>
           <td>
             <button class="btn btn-default" style='padding:3px;' data-toggle="modal" data-target="#editModal">编辑</button>
             <button class="btn btn-danger" style='padding:3px;' data-toggle="modal" data-target="#delModal">删除</button>
@@ -182,25 +182,33 @@
 </template>
 
 <script>
-  import { getUserListPage } from '../api/api';
     export default{
       data(){
         return{
           users:[],
-          listLoading:false
-        }
-      },
-      method:{
-        getUsers(){
-          let para = {
-
-          }
-          getUserListPage(para).then((res) =>{
-            this.users = res.data.users;
-          });
-        },
-        mounted(){
-          this.getUsers();
+          info:[
+            {
+              id:1,
+              name:'颜丽菁',
+              sex:'女',
+              bir:'06/26',
+              address:'1111'
+            },
+             {
+              id:2,
+              name:'大美女',
+              sex:'男',
+              bir:'05/06',
+              address:'2222'
+            },
+             {
+              id:3,
+              name:'大帅哥',
+              sex:'女',
+              bir:'03/2',
+              address:'3333 '
+            }
+          ]
         }
       }
     }

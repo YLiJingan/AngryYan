@@ -2,31 +2,22 @@
   <div class="container-fulid">
     <nav class="navbar navbar-inverse nav-fixed-top">
       <img src="../assets/logo_white.png" alt="logo">
-      <div class="navbar-header">
-        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-          <span class="sr-only">Toggle navigation</span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-        <a class="navbar-brand" href="#">angryyan</a>
-      </div>
-      <div id="navbar" class="navbar-collapse collapse" aria-expanded="false" style="height: 1px;">
+       <div id="navbar" style="height: 1px;">
         <ul class="nav navbar-nav">
           <li><img src='../assets/cat.jpg'></li><br/>
-          <li><a >欢迎您,颜小腰</a></li>
-          <li><a href="#">退出</a></li>
+          <li style='display:inline-block;'><a >欢迎您,颜小腰</a></li>
+          <li style='display:inline-block;'><a href="#">退出</a></li>
         </ul>
-      </div>
+      </div> 
     </nav>
     <div class="row clearfix" style="margin:0px;margin-top:1px;">
-      <div class="col-md-2 col-lg-2 nav-aside" style="height:890px;overflow:hidden;">
+      <div class="col-md-2 col-lg-2 col-sm-3 col-xs-3 nav-aside" id='aside-list' style='height:100%; overflow:hidden; padding-bottom:9999px; margin-bottom:-9999px;'>
         <aside>
             <ul id="accordion">
               <li>
-                <a data-toggle="collapse"  class="collapsed" aria-expanded="false" href="#collapseOne" @click="toggle" style="position:relative">
+                <a data-toggle="collapse"  class="collapsed" aria-expanded="false" href="#collapseOne" @click="toggle">
                   <i class="icon-home icon-large"></i>
-                  <span>Home</span>
+                  <span style='display:inline-block'><router-link to='/'>Home</router-link></span>
                   <span class="icon " v-bind:class="{'icon-chevron-right': isA, 'icon-chevron-down':!isA}"></span>
                 </a>
                 <ul class="sub collapse" id="collapseOne" aria-expanded="false">
@@ -36,46 +27,46 @@
               </li>
               <li>
                 <a data-toggle="collapse"  class="collapsed" aria-expanded="false" href="#collapseTwo">
-                  <i></i>
-                  <span>Forms</span>
-                  <span></span>
+                  <i class=" icon-calendar"></i>
+                  <span style='display:inline-block'><router-link to='/'>Home</router-link></span>
+                  <span class="icon " v-bind:class="{'icon-chevron-right': isA, 'icon-chevron-down':!isA}"></span>
                 </a>
                 <ul class="sub collapse" id="collapseTwo" aria-expanded="false">
-                  <li><a>Form Elements</a></li>
-                  <li><a>Form Validation</a></li>
+                  <li><router-link to="/form">Form #</router-link></li>
+                  <li><router-link to="/tabs">Tabs #</router-link></li>
                 </ul>
               </li>
               <li>
                 <a data-toggle="collapse"  class="collapsed" aria-expanded="false" href="#collapseThree">
-                  <i></i>
-                  <span>Forms</span>
-                  <span></span>
+                  <i class=" icon-tasks"></i>
+                  <span style='display:inline-block'><router-link to='/'>Home</router-link></span>
+                  <span class="icon " v-bind:class="{'icon-chevron-right': isA, 'icon-chevron-down':!isA}"></span>
                 </a>
                 <ul class="sub collapse" id="collapseThree" aria-expanded="false">
-                  <li><a>Form Elements</a></li>
-                  <li><a>Form Validation</a></li>
+                  <li><a>###</a></li>
+                  <li><a>###</a></li>
                 </ul>
               </li>
               <li>
                 <a data-toggle="collapse"  class="collapsed" aria-expanded="false" href="#collapseFour">
-                  <i></i>
-                  <span>Forms</span>
-                  <span></span>
+                  <i class=" icon-cogs"></i>
+                  <span style='display:inline-block'><router-link to='/'>Home</router-link></span>
+                  <span class="icon " v-bind:class="{'icon-chevron-right': isA, 'icon-chevron-down':!isA}"></span>
                 </a>
                 <ul class="sub collapse" id="collapseFour" aria-expanded="false">
-                  <li><a>Form Elements</a></li>
-                  <li><a>Form Validation</a></li>
+                  <li><a>###</a></li>
+                  <li><a>###</a></li>
                 </ul>
               </li>
             </ul>
         </aside>
       </div>
-      <div class="col-md-10 col-lg-10 wrapper clearfix">
+      <div class="col-md-10 col-lg-10 col-sm-9 col-xs-9 wrapper clearfix">
         <div class="row">
           <div class="col-md-12">
             <h3 style="display:inline-block"> {{$route.name}}</h3>
             <ul style="float:right;padding-right: 40px;padding-top:20px;">
-              <li v-for = 'item in $route.matched' :key="item.path" style="display:inline-block;cursor:pointer;">
+              <li v-for ='item in $route.matched' :key="item.path" style="display:inline-block;cursor:pointer;">
                 {{item.name}} /
               </li>
             </ul>
@@ -102,7 +93,12 @@
       toggle: function(){
         this.isA = !this.isA;
       }
-    }
+    },
+    // mounted:function(){
+    //   var asideHeight = document.body.clientHeight;
+    //   console.log(asideHeight);
+    //   document.getElementById('aside-list').style.height = parseInt(asideHeight) - 60 +'px';
+    // }
   };
 </script>
 
@@ -115,6 +111,7 @@
   }
   .container-fulid{
     margin:0 auto;
+    min-width:650px !important;
   }
   ul li{
     list-style: none;
@@ -137,7 +134,7 @@ nav img{
     height: 60px;
 }
 
-@media (min-width: 768px){
+ @media (min-width: 768px){
 .navbar {
     border-radius: 0px;
 }
@@ -179,19 +176,18 @@ nav img{
     width:250px;
     height:60px;
 }
-@media (max-width: 768px) {
-    #navbar .navbar-nav {
-        float: none;
-        margin: 0;
+@media (max-width:768px) {
+    .navbar-nav{
+       margin: 0px;
     }
-}
+} 
 #navbar img{
     width:48px;
     height:48px;
     border-radius:50%;
     margin-top:10px;
 }
-  #accordion{
+ #accordion{
     background-color:#394a59;
     padding:0px;
     margin:0px;
@@ -206,8 +202,11 @@ nav img{
     color:#fff;
   }
   #accordion a{
-    display:block;
+    display:inline-block;
     padding-left:30px;
+  }
+  #accordion span a{
+    padding-left:10px;
   }
   a:hover{
     background-color:#2e3b46;
@@ -216,13 +215,18 @@ nav img{
     line-height:50px;
     border-top:1px solid #fff;
   }
+  #accordion li a{
+    position:relative;
+    width:100%;
+  }
   #accordion>li ul li{
     border-top:1px solid #fff;
     cursor:pointer;
     font-size:14px;
   }
   #accordion>li ul li a{
-    padding-left:50px;
+    width:100%;
+    padding-left:80px;
   }
   #accordion .icon{
     position:absolute;
@@ -233,7 +237,6 @@ nav img{
 
   .nav-aside{
     padding:0px;
-    height: 1100px;
     background-color: #394a59;
   }
 
